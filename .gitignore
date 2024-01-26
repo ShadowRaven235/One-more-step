@@ -1,5 +1,8 @@
 # Godot 4+ specific ignores
 .godot/
+build/
+builds/
+override.cfg
 
 # Godot-specific ignores
 .import/
