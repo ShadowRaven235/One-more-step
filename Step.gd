@@ -8,7 +8,7 @@ func _ready():
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "position", position + Vector2(300 * direction,0), 2)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Utils.slope == Utils.slopes.NONE:
 		rightSpeedMultiplier = 1.0
 		leftSpeedMultiplier = 1.0
