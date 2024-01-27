@@ -26,11 +26,13 @@ func _physics_process(delta):
 		# Change direction to the right
 		if direction == 1:
 			tween.tween_property(self, "position", position + Vector2(300 * direction,0), 2 * rightSpeedMultiplier)
+			get_node("AnimatedSprite2D").flip_h = false
 			Utils.canStep = false
 			
 		# Change direction to the left
 		if direction == -1:
 			tween.tween_property(self, "position", position + Vector2(300 * direction,0), 2 * leftSpeedMultiplier)
+			get_node("AnimatedSprite2D").flip_h = true
 			Utils.canStep = false
 
 func _on_area_entered(area):
