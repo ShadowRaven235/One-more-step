@@ -1,14 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://d285tjbceb2qo"]
+[gd_scene load_steps=20 format=3 uid="uid://d285tjbceb2qo"]
 
 [ext_resource type="Texture2D" uid="uid://b7etl8khfx4ux" path="res://ArtAssets/s4m_ur4i_huge-assetpack-tilemap.png" id="1_7fn0m"]
 [ext_resource type="PackedScene" uid="uid://dyp58e3y06dq6" path="res://player.tscn" id="1_i7urb"]
 [ext_resource type="Texture2D" uid="uid://dcyvoofrrjipl" path="res://ArtAssets/Background/Dungeon_Background_Guide.png" id="1_uiw6i"]
 [ext_resource type="Texture2D" uid="uid://hgiq3wry5r5o" path="res://ArtAssets/color-palette.png" id="2_6qxbl"]
-[ext_resource type="AudioStream" uid="uid://dbtbkws4458hr" path="res://Sound/6_Town_2_Master.ogg" id="4_vom3d"]
 [ext_resource type="Texture2D" uid="uid://o1kq333esdjl" path="res://ArtAssets/Terrain/Dungeon_Terrain_Tileset.png" id="2_j2he8"]
 [ext_resource type="Texture2D" uid="uid://nygv54bvtqyf" path="res://ArtAssets/Props/Dungeon_StoneBase.png" id="3_jq12y"]
+[ext_resource type="AudioStream" uid="uid://dbtbkws4458hr" path="res://Sound/6_Town_2_Master.ogg" id="4_vom3d"]
 [ext_resource type="Texture2D" uid="uid://dobsc41vufdfp" path="res://ArtAssets/Background/Dungeon_BackgroundFire.png" id="4_y0rr2"]
 [ext_resource type="Texture2D" uid="uid://c044v43s1jhxs" path="res://ArtAssets/Background/Dungeon_Background_1.png" id="5_288nv"]
+[ext_resource type="AudioStream" uid="uid://b6hyia50wrcc1" path="res://Sound/Grunt 2.ogg" id="10_jgnjw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_44lvs"]
 texture = ExtResource("1_uiw6i")
@@ -7219,6 +7220,9 @@ zoom = Vector2(3, 3)
 limit_left = 0
 limit_top = 0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Background music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_vom3d")
 autoplay = true
+
+[node name="Trip Grunt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_jgnjw")

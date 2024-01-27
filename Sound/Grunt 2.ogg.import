@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b6hyia50wrcc1"
+path="res://.godot/imported/Grunt 2.ogg-92bf87d1c310b164aa52c1232f259277.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound/Grunt 2.ogg"
+dest_files=["res://.godot/imported/Grunt 2.ogg-92bf87d1c310b164aa52c1232f259277.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
