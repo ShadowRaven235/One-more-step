@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cvxf4lo2s3cor"]
+[gd_scene load_steps=14 format=3 uid="uid://cvxf4lo2s3cor"]
 
 [ext_resource type="Script" path="res://Step.gd" id="1_cikit"]
 [ext_resource type="Texture2D" uid="uid://2lsigk551p05" path="res://ArtAssets/s4m_ur4i_huge-assetpack-ui.png" id="1_tmoat"]
+[ext_resource type="Texture2D" uid="uid://f8w0avpu2xlq" path="res://ArtAssets/arrow.png" id="3_nhw5d"]
+[ext_resource type="Texture2D" uid="uid://cqndmht1ejwef" path="res://ArtAssets/bar.png" id="4_2heql"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jleds"]
 atlas = ExtResource("1_tmoat")
@@ -23,75 +25,114 @@ size = Vector2(7, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7yiv5"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2dhct"]
-atlas = ExtResource("1_tmoat")
-region = Rect2(720, 240, 240, 240)
+[sub_resource type="AtlasTexture" id="AtlasTexture_i78i1"]
+atlas = ExtResource("3_nhw5d")
+region = Rect2(0, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iovnk"]
+atlas = ExtResource("3_nhw5d")
+region = Rect2(24, 0, 24, 20)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6xag1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2dhct")
+"texture": SubResource("AtlasTexture_i78i1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iovnk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_beqrx"]
+size = Vector2(17, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uhf2q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_2heql")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dnoj7"]
-radius = 3.0
-
 [node name="StepMeter" type="Node2D"]
+z_index = 2
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 90.0
-offset_bottom = 18.0
+visible = false
+offset_left = -97.0
+offset_top = -9.0
+offset_right = 98.0
+offset_bottom = 9.0
+metadata/_edit_lock_ = true
 
 [node name="Step" type="Area2D" parent="."]
+z_index = 1
 script = ExtResource("1_cikit")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Step"]
-position = Vector2(40, 10)
+position = Vector2(-3, 1)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_ra3t1")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Step"]
-position = Vector2(43, 9)
 shape = SubResource("RectangleShape2D_wh34w")
+metadata/_edit_lock_ = true
 
 [node name="Trip" type="Area2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trip"]
-position = Vector2(-10, 8)
+position = Vector2(-112, 0)
 shape = SubResource("RectangleShape2D_7yiv5")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Trip"]
-position = Vector2(100, 9)
+position = Vector2(112, 0)
 shape = SubResource("RectangleShape2D_7yiv5")
 
-[node name="Marker" type="Area2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Marker"]
-position = Vector2(5, 7)
-scale = Vector2(0.17, 0.17)
-sprite_frames = SubResource("SpriteFrames_6xag1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marker"]
-position = Vector2(6, 9)
-shape = SubResource("CircleShape2D_dnoj7")
-
-[node name="Marker2" type="Area2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Marker2"]
-position = Vector2(82, 7)
-scale = Vector2(0.17, 0.17)
-sprite_frames = SubResource("SpriteFrames_6xag1")
+[node name="MarkerRight" type="Area2D" parent="."]
+position = Vector2(90, 0)
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marker2"]
-position = Vector2(83, 9)
-shape = SubResource("CircleShape2D_dnoj7")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarkerRight"]
+position = Vector2(-2, 2.38419e-07)
+scale = Vector2(0.80875, 0.80875)
+sprite_frames = SubResource("SpriteFrames_6xag1")
+frame_progress = 0.961141
 metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarkerRight"]
+position = Vector2(-2.5, 0)
+shape = SubResource("RectangleShape2D_beqrx")
+metadata/_edit_lock_ = true
+
+[node name="MarkerLeft" type="Area2D" parent="."]
+position = Vector2(-87, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarkerLeft"]
+scale = Vector2(0.80875, 0.80875)
+sprite_frames = SubResource("SpriteFrames_6xag1")
+frame_progress = 0.928568
+flip_h = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarkerLeft"]
+shape = SubResource("RectangleShape2D_beqrx")
+metadata/_edit_lock_ = true
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+z_index = -1
+scale = Vector2(0.855769, 0.855769)
+sprite_frames = SubResource("SpriteFrames_uhf2q")
 
 [connection signal="area_entered" from="Step" to="Step" method="_on_area_entered"]
 [connection signal="area_exited" from="Step" to="Step" method="_on_area_exited"]

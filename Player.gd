@@ -21,6 +21,7 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	
 	if Utils.tripped and not Utils.gameOver:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
 		animations.play("Death")
 		Utils.gameOver = true
 	

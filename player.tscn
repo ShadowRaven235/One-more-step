@@ -264,4 +264,4 @@ libraries = {
 autoplay = "Idle"
 
 [node name="StepMeter" parent="." instance=ExtResource("3_nmsud")]
-position = Vector2(-44, -51)
+position = Vector2(0, -48)
