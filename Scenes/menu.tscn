@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1wwems4wm6hl"]
+[gd_scene load_steps=3 format=3 uid="uid://d1wwems4wm6hl"]
 
 [ext_resource type="Script" path="res://Scenes/Menu.gd" id="1_a8uyt"]
+[ext_resource type="AudioStream" uid="uid://vc0vjws4f46k" path="res://Sound/29 - Yadu Rajiv - UnSync.ogg" id="2_wu4rc"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -54,6 +55,10 @@ text = "Quit"
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(266, 211.356)
 zoom = Vector2(3, 3)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_wu4rc")
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Title Here/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Title Here/Quit" to="." method="_on_quit_pressed"]

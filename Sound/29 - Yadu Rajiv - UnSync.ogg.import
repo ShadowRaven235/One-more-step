@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://vc0vjws4f46k"
+path="res://.godot/imported/29 - Yadu Rajiv - UnSync.ogg-c63cfa3dd01aec80c93f3aad917074ae.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound/29 - Yadu Rajiv - UnSync.ogg"
+dest_files=["res://.godot/imported/29 - Yadu Rajiv - UnSync.ogg-c63cfa3dd01aec80c93f3aad917074ae.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
