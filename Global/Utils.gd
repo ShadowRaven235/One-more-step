@@ -7,3 +7,4 @@ var canStep = false
 var tripped = false
 var gameOver = false
 var slope = slopes.NONE
+var waitForFirstInput = true
