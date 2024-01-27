@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://d285tjbceb2qo"]
+[gd_scene load_steps=9 format=3 uid="uid://d285tjbceb2qo"]
 
 [ext_resource type="Texture2D" uid="uid://b7etl8khfx4ux" path="res://ArtAssets/s4m_ur4i_huge-assetpack-tilemap.png" id="1_7fn0m"]
 [ext_resource type="PackedScene" uid="uid://dyp58e3y06dq6" path="res://player.tscn" id="1_i7urb"]
 [ext_resource type="Texture2D" uid="uid://hgiq3wry5r5o" path="res://ArtAssets/color-palette.png" id="2_6qxbl"]
+[ext_resource type="AudioStream" uid="uid://dbtbkws4458hr" path="res://Sound/6_Town_2_Master.ogg" id="4_vom3d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbdp0"]
 texture = ExtResource("1_7fn0m")
@@ -4984,3 +4985,7 @@ position = Vector2(20.6477, 4.37571)
 zoom = Vector2(3, 3)
 limit_left = 0
 limit_top = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_vom3d")
+autoplay = true
