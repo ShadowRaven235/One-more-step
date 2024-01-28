@@ -1,11 +1,18 @@
 extends Control
 
+func _on_ready():
+	visible = false
+
 func _physics_process(_delta):
 	if Utils.gameOver:
 		visible = true
-		get_node("MarginContainer/VBoxContainer/Distance").set_text("You Made It " + str(Utils.distance/10.0).pad_decimals(0) + " Steps!")
+		if Utils.newHighScore:
+			get_node("Highscore").visible = true
+		get_node("MarginContainer/VBoxContainer/Distance").set_text("You Made It " + str(Utils.distance).pad_decimals(0) + " Steps!")
 	else:
 		visible = false
+		Utils.newHighScore = false
+		get_node("Highscore").visible = false
 
 func _on_retry_pressed():
 	Utils.distance = 0

@@ -72,5 +72,15 @@ text = "You made it"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Highscore" type="Label" parent="."]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 26.0
+offset_right = 376.0
+offset_bottom = 48.3333
+rotation = 0.436332
+theme_override_fonts/font = ExtResource("2_mlxlb")
+text = "HighScore!"
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Title/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Title/Menu" to="." method="_on_menu_pressed"]
