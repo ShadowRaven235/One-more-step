@@ -35,6 +35,7 @@ func _physics_process(delta):
 		if Utils.tripped and not Utils.gameOver:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			animations.play("Death")
+			$TripGrunt.play()
 			Utils.distance = position.x - startPosition
 			Utils.gameOver = true
 		
