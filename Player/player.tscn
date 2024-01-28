@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dyp58e3y06dq6"]
+[gd_scene load_steps=34 format=3 uid="uid://dyp58e3y06dq6"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_p3oxi"]
 [ext_resource type="Texture2D" uid="uid://dqctjyqxthyg2" path="res://ArtAssets/Background/s4m_ur4i_huge-assetpack-character-animations.png" id="2_kag6a"]
@@ -6,6 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://b6hyia50wrcc1" path="res://Sound/Grunt 2.ogg" id="4_dvi7y"]
 [ext_resource type="AudioStream" uid="uid://bg102yn0uy6su" path="res://Sound/Yay.ogg" id="5_cilm6"]
 [ext_resource type="AudioStream" uid="uid://cf4b32oiiwls8" path="res://Sound/Misc 1.ogg" id="6_qjucq"]
+[ext_resource type="AudioStream" uid="uid://bchpbo0n7yud" path="res://Sound/Welcome 1.ogg" id="7_ar354"]
+[ext_resource type="AudioStream" uid="uid://csynsj8p8b2my" path="res://Sound/Its Hopeless.ogg" id="8_prlwf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1lphn"]
 radius = 7.0
@@ -318,3 +320,10 @@ volume_db = -5.0
 
 [node name="Step" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_qjucq")
+
+[node name="Welcome" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ar354")
+autoplay = true
+
+[node name="Hopeless" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_prlwf")
