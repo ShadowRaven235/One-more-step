@@ -16,4 +16,6 @@ animations = [{
 [node name="Footprint" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.196078)
+scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_3w4qm")
