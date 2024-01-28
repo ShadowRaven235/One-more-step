@@ -269,3 +269,4 @@ position = Vector2(0, -48)
 
 [node name="TripGrunt" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_dvi7y")
+volume_db = -5.0

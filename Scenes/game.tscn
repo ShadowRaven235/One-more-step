@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://d285tjbceb2qo"]
+[gd_scene load_steps=35 format=3 uid="uid://d285tjbceb2qo"]
 
 [ext_resource type="Texture2D" uid="uid://b7etl8khfx4ux" path="res://ArtAssets/Background/s4m_ur4i_huge-assetpack-tilemap.png" id="1_7fn0m"]
 [ext_resource type="PackedScene" uid="uid://dyp58e3y06dq6" path="res://player.tscn" id="1_i7urb"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://ffa35ah83172" path="res://ArtAssets/Cave/Background/Cave_Background_Guide.png" id="8_vjkqt"]
 [ext_resource type="Texture2D" uid="uid://bc2nu3nius04c" path="res://ArtAssets/Cave/Background/Cave_Background_2.png" id="9_80qmu"]
 [ext_resource type="PackedScene" uid="uid://tyvgv8mnmqly" path="res://Scenes/game_over.tscn" id="11_ig0wy"]
+[ext_resource type="AudioStream" uid="uid://bchpbo0n7yud" path="res://Sound/Welcome 1.ogg" id="18_2mqme"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_44lvs"]
 texture = ExtResource("1_uiw6i")
@@ -12095,4 +12096,9 @@ offset_bottom = 100.624
 
 [node name="Background music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_vom3d")
+volume_db = -15.0
 autoplay = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_2mqme")
+volume_db = -5.0
