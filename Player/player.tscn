@@ -1,9 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://dyp58e3y06dq6"]
+[gd_scene load_steps=32 format=3 uid="uid://dyp58e3y06dq6"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_p3oxi"]
 [ext_resource type="Texture2D" uid="uid://dqctjyqxthyg2" path="res://ArtAssets/Background/s4m_ur4i_huge-assetpack-character-animations.png" id="2_kag6a"]
 [ext_resource type="PackedScene" uid="uid://cvxf4lo2s3cor" path="res://Player/step_meter.tscn" id="3_nmsud"]
 [ext_resource type="AudioStream" uid="uid://b6hyia50wrcc1" path="res://Sound/Grunt 2.ogg" id="4_dvi7y"]
+[ext_resource type="AudioStream" uid="uid://bg102yn0uy6su" path="res://Sound/Yay.ogg" id="5_cilm6"]
+[ext_resource type="AudioStream" uid="uid://cf4b32oiiwls8" path="res://Sound/Misc 1.ogg" id="6_qjucq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1lphn"]
 radius = 7.0
@@ -309,3 +311,10 @@ position = Vector2(0, -48)
 [node name="TripGrunt" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_dvi7y")
 volume_db = -5.0
+
+[node name="Yay" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_cilm6")
+volume_db = -5.0
+
+[node name="Step" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_qjucq")

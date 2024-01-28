@@ -21,6 +21,7 @@ func _physics_process(delta):
 		if Utils.victory and not Utils.gameOver:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			animations.play("Win")
+			$Yay.play()
 			Utils.distance = floor((position.x - startPosition)/10.0)
 			Utils.gameOver = true
 			if Utils.distance > Utils.highScore:
@@ -58,6 +59,7 @@ func _physics_process(delta):
 				if Utils.canStep and (Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right")) or stepping:
 					velocity.x = SPEED
 					animations.play("Step")
+					$Step.play()
 					stepping = true
 					stepTime -= delta
 					if stepTime <= 0:
