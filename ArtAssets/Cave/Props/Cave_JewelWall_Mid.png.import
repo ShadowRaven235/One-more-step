@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hgiq3wry5r5o"
-path="res://.godot/imported/color-palette.png-e088b1ffde06e199988d718b405c472c.ctex"
+uid="uid://cu2qld0oolbcg"
+path="res://.godot/imported/Cave_JewelWall_Mid.png-e5460726d709b58fa7241c4fdfbece6a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtAssets/color-palette.png"
-dest_files=["res://.godot/imported/color-palette.png-e088b1ffde06e199988d718b405c472c.ctex"]
+source_file="res://ArtAssets/Cave/Props/Cave_JewelWall_Mid.png"
+dest_files=["res://.godot/imported/Cave_JewelWall_Mid.png-e5460726d709b58fa7241c4fdfbece6a.ctex"]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://step_meter.gd" id="1_4gn3g"]
 [ext_resource type="Script" path="res://Step.gd" id="1_cikit"]
-[ext_resource type="Texture2D" uid="uid://tpjs1mfbm3r7" path="res://ArtAssets/shoe.png" id="3_cspuy"]
-[ext_resource type="Texture2D" uid="uid://f8w0avpu2xlq" path="res://ArtAssets/arrow.png" id="3_nhw5d"]
+[ext_resource type="Texture2D" uid="uid://tpjs1mfbm3r7" path="res://ArtAssets/Background/shoe.png" id="3_cspuy"]
+[ext_resource type="Texture2D" uid="uid://f8w0avpu2xlq" path="res://ArtAssets/Background/arrow.png" id="3_nhw5d"]
 [ext_resource type="Texture2D" uid="uid://cqndmht1ejwef" path="res://ArtAssets/bar.png" id="4_2heql"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ra3t1"]

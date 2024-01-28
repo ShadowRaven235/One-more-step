@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tpjs1mfbm3r7"
-path="res://.godot/imported/shoe.png-24a92d28d34445a61abf39c1c4d1bb0a.ctex"
+uid="uid://blq4se0nsug2q"
+path="res://.godot/imported/Cave_Stalactite_Left.png-0756951969fa30e68af3669e9ce73160.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtAssets/shoe.png"
-dest_files=["res://.godot/imported/shoe.png-24a92d28d34445a61abf39c1c4d1bb0a.ctex"]
+source_file="res://ArtAssets/Cave/Props/Cave_Stalactite_Left.png"
+dest_files=["res://.godot/imported/Cave_Stalactite_Left.png-0756951969fa30e68af3669e9ce73160.ctex"]
 
 [params]
 
