@@ -12,11 +12,11 @@ func _physics_process(_delta):
 			rightSpeedMultiplier = 1.0
 			leftSpeedMultiplier = 1.0
 		elif Utils.slope == Utils.slopes.SLOPE_RIGHT:
-			rightSpeedMultiplier = 0.5
+			rightSpeedMultiplier = 0.6
 			leftSpeedMultiplier = 1.5
 		elif Utils.slope == Utils.slopes.SLOPE_LEFT:
 			rightSpeedMultiplier = 1.5
-			leftSpeedMultiplier = 0.5
+			leftSpeedMultiplier = 0.6
 		
 		# Update step speed
 		if currentSlope != Utils.slope:
