@@ -18,6 +18,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -11.0
+offset_top = -7.0
+offset_right = 123.0
+offset_bottom = 62.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.294118)
@@ -33,11 +37,13 @@ theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
+metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 15
+metadata/_edit_lock_ = true
 
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -45,6 +51,7 @@ theme_override_fonts/font = ExtResource("2_mlxlb")
 text = "You Tripped!"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_lock_ = true
 
 [node name="Retry" type="Button" parent="MarginContainer/VBoxContainer/Title"]
 layout_mode = 1
@@ -59,6 +66,7 @@ offset_right = 50.172
 offset_bottom = 47.008
 theme_override_fonts/font = ExtResource("2_mlxlb")
 text = "Retry"
+metadata/_edit_lock_ = true
 
 [node name="Menu" type="Button" parent="MarginContainer/VBoxContainer/Title"]
 layout_mode = 1
@@ -73,6 +81,7 @@ offset_right = 49.674
 offset_bottom = 95.008
 theme_override_fonts/font = ExtResource("2_mlxlb")
 text = "Menu"
+metadata/_edit_lock_ = true
 
 [node name="Distance" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -80,6 +89,7 @@ theme_override_fonts/font = ExtResource("2_mlxlb")
 text = "You made it"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_lock_ = true
 
 [node name="Highscore" type="Label" parent="."]
 layout_mode = 0
@@ -90,6 +100,7 @@ offset_bottom = 48.3333
 rotation = 0.436332
 theme_override_fonts/font = ExtResource("2_mlxlb")
 text = "HighScore!"
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Title/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Title/Menu" to="." method="_on_menu_pressed"]

@@ -12085,7 +12085,7 @@ sources/14 = SubResource("TileSetAtlasSource_t2v8f")
 sources/15 = SubResource("TileSetAtlasSource_uct0r")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r1vb4"]
-size = Vector2(75, 405)
+size = Vector2(461.5, 405)
 
 [node name="Game" type="Node2D"]
 position = Vector2(173, 103)
@@ -12152,7 +12152,7 @@ volume_db = -5.0
 [node name="End" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
-position = Vector2(5893, -91)
+position = Vector2(6086.25, -91)
 shape = SubResource("RectangleShape2D_r1vb4")
 
 [connection signal="body_entered" from="End" to="Player" method="_on_end_body_entered"]
