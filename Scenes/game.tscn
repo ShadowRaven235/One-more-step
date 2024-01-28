@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://ffa35ah83172" path="res://ArtAssets/Cave/Background/Cave_Background_Guide.png" id="8_vjkqt"]
 [ext_resource type="Texture2D" uid="uid://bc2nu3nius04c" path="res://ArtAssets/Cave/Background/Cave_Background_2.png" id="9_80qmu"]
 [ext_resource type="AudioStream" uid="uid://b6hyia50wrcc1" path="res://Sound/Grunt 2.ogg" id="10_jgnjw"]
-[ext_resource type="PackedScene" uid="uid://tyvgv8mnmqly" path="res://Scenes/game_over.tscn" id="11_ig0wy"]
+[ext_resource type="PackedScene" path="res://Scenes/game_over.tscn" id="11_ig0wy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_44lvs"]
 texture = ExtResource("1_uiw6i")
