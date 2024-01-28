@@ -19,6 +19,14 @@ config/icon="res://icon.svg"
 
 Utils="*res://Global/Utils.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

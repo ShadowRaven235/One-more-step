@@ -1,6 +1,11 @@
 extends Node2D
 
 func _physics_process(_delta):
+	if Utils.gameOver:
+		visible = false
+	else:
+		visible = true
+		
 	if Utils.slope == Utils.slopes.NONE:
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "rotation", 0.0, 0.5)

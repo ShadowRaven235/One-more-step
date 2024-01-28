@@ -1,14 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1wwems4wm6hl"]
+[gd_scene load_steps=4 format=3 uid="uid://d1wwems4wm6hl"]
 
 [ext_resource type="Script" path="res://Scenes/Menu.gd" id="1_a8uyt"]
+[ext_resource type="FontFile" uid="uid://cfbymkpkjh0am" path="res://ArtAssets/InkbitThree.ttf" id="2_tbjgn"]
 [ext_resource type="AudioStream" uid="uid://vc0vjws4f46k" path="res://Sound/29 - Yadu Rajiv - UnSync.ogg" id="2_wu4rc"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
 anchor_right = 0.446
 anchor_bottom = 0.558
-offset_right = 0.208008
-offset_bottom = -4.58401
+offset_right = 639.208
+offset_bottom = 278.416
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 1.01251)
@@ -16,45 +17,61 @@ script = ExtResource("1_a8uyt")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 modulate = Color(0.247059, 0.109804, 0.560784, 1)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(12.7469, 8.8385)
+layout_mode = 2
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 1159.0
+offset_bottom = 652.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 512.0
-offset_bottom = 356.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -2.96293
+offset_right = -5.0
+offset_bottom = -2.96295
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_vertical = 0
 
 [node name="Title Here" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_tbjgn")
+theme_override_font_sizes/font_size = 125
 text = "One More Step!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer/Title Here"]
 layout_mode = 2
-offset_left = 160.0
-offset_top = 32.5167
-offset_right = 352.0
-offset_bottom = 63.5167
+offset_left = 400.0
+offset_top = 250.0
+offset_right = 800.0
+offset_bottom = 350.0
+theme_override_fonts/font = ExtResource("2_tbjgn")
+theme_override_font_sizes/font_size = 75
 text = "Play"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/Title Here"]
-layout_mode = 2
-offset_left = 160.0
-offset_top = 71.0348
-offset_right = 352.0
-offset_bottom = 102.035
+layout_mode = 0
+offset_left = 400.0
+offset_top = 400.0
+offset_right = 800.0
+offset_bottom = 500.0
+theme_override_fonts/font = ExtResource("2_tbjgn")
+theme_override_font_sizes/font_size = 75
 text = "Quit"
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(266, 211.356)
-zoom = Vector2(3, 3)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_wu4rc")
