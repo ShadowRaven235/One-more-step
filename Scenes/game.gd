@@ -8,6 +8,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if Utils.waitForFirstInput:
+		get_node("Player/Camera2D/PressAnyKey").visible = true
+	else:
+		get_node("Player/Camera2D/PressAnyKey").visible = false
+		
 	if Utils.gameOver:
 		get_node("Player/Camera2D/HighScore").set_text("HighScore: " + str(Utils.highScore))
 		get_node("Player/Camera2D/TotalDistance").set_text("Total Steps: " + str(Utils.totalDistance))
