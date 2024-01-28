@@ -4,6 +4,7 @@ var currentSlope = null
 var direction = 1
 var rightSpeedMultiplier = 1.0
 var leftSpeedMultiplier = 1.0
+var footprint = preload("res://Player/footprint.tscn")
 
 func _physics_process(_delta):
 	if Utils.waitForFirstInput == false:
@@ -44,7 +45,10 @@ func _physics_process(_delta):
 				Utils.canStep = false
 				
 			# Create footprint
-			#get_node("Footprints").add_child()
+			var footprintTemp = footprint.instantiate()
+			footprintTemp.position = position
+			footprintTemp.get_node("AnimatedSprite2D").flip_h = !get_node("AnimatedSprite2D").flip_h
+			get_parent().get_node("Footprints").add_child(footprintTemp)
 
 func _on_area_entered(area):
 	if area.name == "Trip":
