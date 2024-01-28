@@ -1,8 +1,8 @@
 [gd_scene load_steps=28 format=3 uid="uid://dyp58e3y06dq6"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_p3oxi"]
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_p3oxi"]
 [ext_resource type="Texture2D" uid="uid://dqctjyqxthyg2" path="res://ArtAssets/Background/s4m_ur4i_huge-assetpack-character-animations.png" id="2_kag6a"]
-[ext_resource type="PackedScene" uid="uid://cvxf4lo2s3cor" path="res://step_meter.tscn" id="3_nmsud"]
+[ext_resource type="PackedScene" uid="uid://cvxf4lo2s3cor" path="res://Player/step_meter.tscn" id="3_nmsud"]
 [ext_resource type="AudioStream" uid="uid://b6hyia50wrcc1" path="res://Sound/Grunt 2.ogg" id="4_dvi7y"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1lphn"]

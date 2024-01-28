@@ -42,6 +42,9 @@ func _physics_process(_delta):
 				tween.tween_property(self, "position", position + Vector2(300 * direction,0), 2 * leftSpeedMultiplier)
 				get_node("AnimatedSprite2D").flip_h = true
 				Utils.canStep = false
+				
+			# Create footprint
+			#get_node("Footprints").add_child()
 
 func _on_area_entered(area):
 	if area.name == "Trip":
