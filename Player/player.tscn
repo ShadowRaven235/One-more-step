@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dyp58e3y06dq6"]
+[gd_scene load_steps=30 format=3 uid="uid://dyp58e3y06dq6"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_p3oxi"]
 [ext_resource type="Texture2D" uid="uid://dqctjyqxthyg2" path="res://ArtAssets/Background/s4m_ur4i_huge-assetpack-character-animations.png" id="2_kag6a"]
@@ -73,6 +73,10 @@ region = Rect2(20, 24, 20, 24)
 atlas = ExtResource("2_kag6a")
 region = Rect2(40, 24, 20, 24)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyxjb"]
+atlas = ExtResource("2_kag6a")
+region = Rect2(40, 48, 20, 24)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_kfhbr"]
 animations = [{
 "frames": [{
@@ -136,6 +140,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"Step",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyxjb")
+}],
+"loop": true,
+"name": &"Win",
 "speed": 5.0
 }]
 
@@ -238,12 +250,40 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
 
+[sub_resource type="Animation" id="Animation_h26jg"]
+resource_name = "Win"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Win"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rccgv"]
 _data = {
 "Death": SubResource("Animation_cld73"),
 "Idle": SubResource("Animation_g0c8x"),
 "RESET": SubResource("Animation_tyeo5"),
-"Step": SubResource("Animation_wies4")
+"Step": SubResource("Animation_wies4"),
+"Win": SubResource("Animation_h26jg")
 }
 
 [node name="Player" type="CharacterBody2D"]
@@ -255,8 +295,7 @@ shape = SubResource("CapsuleShape2D_1lphn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kfhbr")
-animation = &"Death"
-frame = 1
+animation = &"Win"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

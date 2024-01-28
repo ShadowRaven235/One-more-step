@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://d285tjbceb2qo"]
+[gd_scene load_steps=38 format=3 uid="uid://d285tjbceb2qo"]
 
 [ext_resource type="Script" path="res://Scenes/game.gd" id="1_1vrkg"]
 [ext_resource type="Texture2D" uid="uid://b7etl8khfx4ux" path="res://ArtAssets/Background/s4m_ur4i_huge-assetpack-tilemap.png" id="1_7fn0m"]
@@ -12066,6 +12066,9 @@ sources/12 = SubResource("TileSetAtlasSource_fnwkf")
 sources/13 = SubResource("TileSetAtlasSource_nfg0a")
 sources/14 = SubResource("TileSetAtlasSource_t2v8f")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1vb4"]
+size = Vector2(75, 405)
+
 [node name="Game" type="Node2D"]
 position = Vector2(173, 103)
 script = ExtResource("1_1vrkg")
@@ -12097,6 +12100,7 @@ offset_left = -191.648
 offset_top = -108.376
 offset_right = 193.352
 offset_bottom = 100.624
+metadata/_edit_lock_ = true
 
 [node name="HighScore" type="Label" parent="Player/Camera2D"]
 offset_left = -191.0
@@ -12106,6 +12110,7 @@ offset_bottom = -82.0
 theme_override_fonts/font = ExtResource("17_sdntm")
 theme_override_font_sizes/font_size = 10
 text = "HighScore:"
+metadata/_edit_lock_ = true
 
 [node name="TotalDistance" type="Label" parent="Player/Camera2D"]
 offset_left = -191.0
@@ -12115,6 +12120,7 @@ offset_bottom = -94.0
 theme_override_fonts/font = ExtResource("17_sdntm")
 theme_override_font_sizes/font_size = 10
 text = "Total Steps:"
+metadata/_edit_lock_ = true
 
 [node name="Background music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_vom3d")
@@ -12124,3 +12130,11 @@ autoplay = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_2mqme")
 volume_db = -5.0
+
+[node name="End" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
+position = Vector2(5893, -91)
+shape = SubResource("RectangleShape2D_r1vb4")
+
+[connection signal="body_entered" from="End" to="Player" method="_on_end_body_entered"]

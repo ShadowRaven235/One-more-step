@@ -5,10 +5,16 @@ func _on_ready():
 
 func _physics_process(_delta):
 	if Utils.gameOver:
-		visible = true
+		if Utils.victory:
+			get_node("MarginContainer/VBoxContainer/Title").set_text("You DIDN'T Trip!")
+			get_node("MarginContainer/VBoxContainer/Title/Retry").visible = false
+		else:
+			get_node("MarginContainer/VBoxContainer/Title").set_text("You Tripped!")
+			get_node("MarginContainer/VBoxContainer/Title/Retry").visible = true
 		if Utils.newHighScore:
 			get_node("Highscore").visible = true
 		get_node("MarginContainer/VBoxContainer/Distance").set_text("You Made It " + str(Utils.distance).pad_decimals(0) + " Steps!")
+		visible = true
 	else:
 		visible = false
 		Utils.newHighScore = false
@@ -28,6 +34,7 @@ func _on_menu_pressed():
 	Utils.canStep = false
 	Utils.tripped = false
 	Utils.gameOver = false
+	Utils.victory = false
 	Utils.slope = Utils.slopes.NONE
 	Utils.waitForFirstInput = true
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
