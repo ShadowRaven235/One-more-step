@@ -17,6 +17,10 @@ func _ready():
 	get_node("AnimatedSprite2D").flip_h = true
 
 func _physics_process(delta):
+	# Add the gravity.
+	if not is_on_floor():
+		velocity.y += gravity * delta
+				
 	if Utils.waitForFirstInput == false:
 		if Utils.victory and not Utils.gameOver:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -29,6 +33,7 @@ func _physics_process(delta):
 			Utils.totalDistance = Utils.totalDistance + Utils.distance
 			Utils.saveGame()
 		elif Utils.gameOver == false:
+			# Determine slope
 			var floorAngle = get_floor_angle()
 			
 			if floorAngle == 0:
@@ -38,10 +43,7 @@ func _physics_process(delta):
 			elif floorAngle > 0.6 and floorAngle < 0.7 or floorAngle > 1:
 				Utils.slope = Utils.slopes.SLOPE_RIGHT
 				
-			# Add the gravity.
-			if not is_on_floor():
-				velocity.y += gravity * delta
-			
+			# Set game over state
 			if Utils.tripped and not Utils.gameOver:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 				animations.play("Death")
@@ -54,6 +56,7 @@ func _physics_process(delta):
 				Utils.totalDistance = Utils.totalDistance + Utils.distance
 				Utils.saveGame()
 			
+			# Update stepping
 			if not Utils.tripped:
 				if Utils.canStep and (Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right")) or stepping and (Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right")):
 					velocity.x = SPEED
