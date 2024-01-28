@@ -55,7 +55,7 @@ func _physics_process(delta):
 				Utils.saveGame()
 			
 			if not Utils.tripped:
-				if Utils.canStep and (Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right")) or stepping:
+				if Utils.canStep and (Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right")) or stepping and (Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right")):
 					velocity.x = SPEED
 					animations.play("Step")
 					stepping = true
