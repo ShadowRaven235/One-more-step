@@ -18,24 +18,9 @@ func _ready():
 
 func _physics_process(delta):
 	if Utils.waitForFirstInput == false:
-		
-		var floorAngle = get_floor_angle()
-		
-		if floorAngle == 0:
-			Utils.slope = Utils.slopes.NONE
-		elif floorAngle > 0.75 and floorAngle < 1:
-			Utils.slope = Utils.slopes.SLOPE_LEFT
-		elif floorAngle > 0.6 and floorAngle < 0.7 or floorAngle > 1:
-			Utils.slope = Utils.slopes.SLOPE_RIGHT
-			
-		# Add the gravity.
-		if not is_on_floor():
-			velocity.y += gravity * delta
-		
-		if Utils.tripped and not Utils.gameOver:
+		if Utils.victory and not Utils.gameOver:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
-			animations.play("Death")
-			$TripGrunt.play()
+			animations.play("Win")
 			Utils.distance = floor((position.x - startPosition)/10.0)
 			Utils.gameOver = true
 			if Utils.distance > Utils.highScore:
@@ -43,24 +28,54 @@ func _physics_process(delta):
 				Utils.newHighScore = true
 			Utils.totalDistance = Utils.totalDistance + Utils.distance
 			Utils.saveGame()
-		
-		if not Utils.tripped:
-			if Utils.canStep and (Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right")) or stepping:
-				velocity.x = SPEED
-				animations.play("Step")
-				stepping = true
-				stepTime -= delta
-				if stepTime <= 0:
+		elif Utils.gameOver == false:
+			var floorAngle = get_floor_angle()
+			
+			if floorAngle == 0:
+				Utils.slope = Utils.slopes.NONE
+			elif floorAngle > 0.75 and floorAngle < 1:
+				Utils.slope = Utils.slopes.SLOPE_LEFT
+			elif floorAngle > 0.6 and floorAngle < 0.7 or floorAngle > 1:
+				Utils.slope = Utils.slopes.SLOPE_RIGHT
+				
+			# Add the gravity.
+			if not is_on_floor():
+				velocity.y += gravity * delta
+			
+			if Utils.tripped and not Utils.gameOver:
+				velocity.x = move_toward(velocity.x, 0, SPEED)
+				animations.play("Death")
+				$TripGrunt.play()
+				Utils.distance = floor((position.x - startPosition)/10.0)
+				Utils.gameOver = true
+				if Utils.distance > Utils.highScore:
+					Utils.highScore = Utils.distance
+					Utils.newHighScore = true
+				Utils.totalDistance = Utils.totalDistance + Utils.distance
+				Utils.saveGame()
+			
+			if not Utils.tripped:
+				if Utils.canStep and (Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right")) or stepping:
+					velocity.x = SPEED
+					animations.play("Step")
+					stepping = true
+					stepTime -= delta
+					if stepTime <= 0:
+						stepping = false
+						stepTime = maxStepTime
+				else:
+					velocity.x = move_toward(velocity.x, 0, SPEED)
+					animations.play("Idle")
 					stepping = false
 					stepTime = maxStepTime
-			else:
-				velocity.x = move_toward(velocity.x, 0, SPEED)
-				animations.play("Idle")
-				stepping = false
-				stepTime = maxStepTime
 	move_and_slide()
 		
 func _input(event):
 	if event is InputEventKey:
 		if event.pressed:
 			Utils.waitForFirstInput = false
+
+
+func _on_end_body_entered(body):
+	if body.name == "Player":
+		Utils.victory = true

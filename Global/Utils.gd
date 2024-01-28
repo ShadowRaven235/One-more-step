@@ -10,6 +10,7 @@ var distance = 0
 var canStep = false
 var tripped = false
 var gameOver = false
+var victory = false
 var slope = slopes.NONE
 var waitForFirstInput = true
 
