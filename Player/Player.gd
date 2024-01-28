@@ -36,18 +36,15 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			animations.play("Death")
 			$TripGrunt.play()
-			Utils.distance = position.x - startPosition
+			Utils.distance = floor((position.x - startPosition)/10.0)
 			Utils.gameOver = true
+			if Utils.distance > Utils.highScore:
+				Utils.highScore = Utils.distance
+				Utils.newHighScore = true
+			Utils.totalDistance = Utils.totalDistance + Utils.distance
+			Utils.saveGame()
 		
 		if not Utils.tripped:
-			# Handle jump.
-			#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-			#	velocity.y = JUMP_VELOCITY
-
-			# Get the input direction and handle the movement/deceleration.
-			# As good practice, you should replace UI actions with custom gameplay actions.
-			var direction = Input.get_axis("ui_left", "ui_right")
-				
 			if Utils.canStep and (Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right")) or stepping:
 				velocity.x = SPEED
 				animations.play("Step")
