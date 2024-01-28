@@ -1,9 +1,9 @@
 extends Control
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Utils.gameOver:
 		visible = true
-		get_node("MarginContainer/VBoxContainer/Distance").set_text("You Made It " + str(Utils.distance/10).pad_decimals(0) + " Steps!")
+		get_node("MarginContainer/VBoxContainer/Distance").set_text("You Made It " + str(Utils.distance/10.0).pad_decimals(0) + " Steps!")
 	else:
 		visible = false
 
