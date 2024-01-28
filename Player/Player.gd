@@ -47,7 +47,6 @@ func _physics_process(delta):
 			# Get the input direction and handle the movement/deceleration.
 			# As good practice, you should replace UI actions with custom gameplay actions.
 			var direction = Input.get_axis("ui_left", "ui_right")
-			print(str(direction) + " : " + str(Utils.canStep))
 				
 			if Utils.canStep and (Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right")) or stepping:
 				velocity.x = SPEED
