@@ -17,4 +17,10 @@ func _on_retry_pressed():
 	get_tree().change_scene_to_file("res://Scenes/game.tscn")
 	
 func _on_menu_pressed():
+	Utils.distance = 0
+	Utils.canStep = false
+	Utils.tripped = false
+	Utils.gameOver = false
+	Utils.slope = Utils.slopes.NONE
+	Utils.waitForFirstInput = true
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
