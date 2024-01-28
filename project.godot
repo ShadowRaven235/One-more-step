@@ -13,7 +13,8 @@ config_version=5
 config/name="One more step"
 run/main_scene="res://Scenes/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://ArtAssets/Background/shoe.png"
+config/windows_native_icon="res://ArtAssets/shoe.ico"
 
 [autoload]
 
