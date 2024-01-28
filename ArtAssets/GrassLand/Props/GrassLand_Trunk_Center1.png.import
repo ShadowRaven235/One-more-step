@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f8w0avpu2xlq"
-path="res://.godot/imported/arrow.png-a7cbc62813b4dc8aa92dba10f09483f6.ctex"
+uid="uid://cpdyghnj18dt0"
+path="res://.godot/imported/GrassLand_Trunk_Center1.png-2d35c5b50438e37d43bf84f1a218ad06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtAssets/arrow.png"
-dest_files=["res://.godot/imported/arrow.png-a7cbc62813b4dc8aa92dba10f09483f6.ctex"]
+source_file="res://ArtAssets/GrassLand/Props/GrassLand_Trunk_Center1.png"
+dest_files=["res://.godot/imported/GrassLand_Trunk_Center1.png-2d35c5b50438e37d43bf84f1a218ad06.ctex"]
 
 [params]
 
